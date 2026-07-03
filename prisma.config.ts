@@ -7,8 +7,11 @@ export default defineConfig({
   schema: "prisma/schema.prisma",
   migrations: {
     path: "prisma/migrations",
+    seed: "tsx prisma/seed.ts",
   },
   datasource: {
-    url: process.env["DATABASE_URL"],
+    // The CLI talks to the local Prisma Postgres server via its proxy protocol;
+    // the app itself uses DATABASE_URL (direct TCP) through the pg driver adapter.
+    url: process.env["PRISMA_DATABASE_URL"] ?? process.env["DATABASE_URL"],
   },
 });
