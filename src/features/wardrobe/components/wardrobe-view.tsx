@@ -122,7 +122,7 @@ export function WardrobeView({
 
       {/* Add dialog */}
       <Dialog open={adding} onOpenChange={(o) => !o && setAdding(false)}>
-        <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-2xl">
+        <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-2xl">
           <DialogHeader>
             <DialogTitle>Add item</DialogTitle>
           </DialogHeader>
@@ -146,7 +146,7 @@ export function WardrobeView({
           if (!o) setSelected(null);
         }}
       >
-        <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-2xl">
+        <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-2xl">
           {selected && (
             <>
               <DialogHeader>

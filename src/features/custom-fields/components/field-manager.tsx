@@ -54,12 +54,15 @@ export function FieldManager({ fields }: { fields: CustomField[] }) {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-muted-foreground">
           Define your own attributes — “Formal level”, “Comfort rating”,
           “Vacation”… They appear on every item and become filters.
         </p>
-        <Button onClick={() => setCreating(true)}>
+        <Button
+          className="shrink-0 self-start sm:self-auto"
+          onClick={() => setCreating(true)}
+        >
           <Plus className="size-4" /> New field
         </Button>
       </div>
@@ -92,7 +95,7 @@ export function FieldManager({ fields }: { fields: CustomField[] }) {
               <Badge variant="secondary" className="ml-auto shrink-0">
                 {TYPE_LABELS[f.type]}
               </Badge>
-              <div className="flex shrink-0 items-center gap-0.5 opacity-0 transition-opacity group-hover:opacity-100">
+              <div className="flex shrink-0 items-center gap-0.5 transition-opacity sm:opacity-0 sm:group-focus-within:opacity-100 sm:group-hover:opacity-100">
                 <Button
                   variant="ghost"
                   size="icon-sm"
@@ -198,7 +201,7 @@ function FieldDialog({
 
   return (
     <Dialog open onOpenChange={(o) => !o && onClose()}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-md">
         <DialogHeader>
           <DialogTitle>{editing ? "Edit field" : "New custom field"}</DialogTitle>
         </DialogHeader>

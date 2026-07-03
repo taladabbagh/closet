@@ -32,7 +32,10 @@ export function MobileFilters({
           </Button>
         }
       />
-      <SheetContent side="left" className="w-80 overflow-y-auto p-5">
+      <SheetContent
+        side="left"
+        className="w-[min(22rem,90vw)] overflow-y-auto p-5"
+      >
         <SheetHeader className="p-0 pb-4">
           <SheetTitle>Filters</SheetTitle>
         </SheetHeader>

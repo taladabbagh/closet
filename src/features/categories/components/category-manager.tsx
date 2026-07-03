@@ -64,12 +64,13 @@ export function CategoryManager({ categories }: { categories: Category[] }) {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-muted-foreground">
           Organize your wardrobe your way — categories are fully yours, nest
           them however you like.
         </p>
         <Button
+          className="shrink-0 self-start sm:self-auto"
           onClick={() =>
             setEditor({ open: true, editing: null, defaultParentId: null })
           }
@@ -116,7 +117,7 @@ export function CategoryManager({ categories }: { categories: Category[] }) {
                 {node.name}
               </span>
 
-              <div className="ml-auto flex items-center gap-0.5 opacity-0 transition-opacity group-hover:opacity-100">
+              <div className="ml-auto flex items-center gap-0.5 transition-opacity sm:opacity-0 sm:group-focus-within:opacity-100 sm:group-hover:opacity-100">
                 <Button
                   variant="ghost"
                   size="icon-sm"
@@ -252,7 +253,7 @@ function CategoryDialog({
 
   return (
     <Dialog open onOpenChange={(o) => !o && onClose()}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-md">
         <DialogHeader>
           <DialogTitle>
             {editing ? "Edit category" : "New category"}

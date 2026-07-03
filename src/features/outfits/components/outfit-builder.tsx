@@ -251,8 +251,8 @@ export function OutfitBuilder({
         ))}
       </div>
 
-      {/* floating action bar */}
-      <div className="pointer-events-none sticky bottom-4 z-20 mt-6 flex justify-center">
+      {/* floating action bar — sits above the mobile tab bar */}
+      <div className="pointer-events-none sticky bottom-[calc(5rem+env(safe-area-inset-bottom))] z-20 mt-6 flex justify-center md:bottom-4">
         <div className="pointer-events-auto flex items-center gap-1 rounded-full border border-border/70 bg-background/75 p-1.5 shadow-[0_12px_40px_-12px_rgb(0_0_0/0.3)] backdrop-blur-xl">
           <Button
             variant="ghost"
